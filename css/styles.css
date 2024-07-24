@@ -1,0 +1,86 @@
+:root{
+    --black: #0D0D0D;
+    --lightgray: #BFBFBF;
+    --ligthblue: #6C72D9;
+    --blue: #6368BF;
+    --darkblue: #4E4AD9;
+    --mainfont: "Merriweather", serif;
+    --headingfont: "Work Sans", sans-serif;
+    --albert: "Albert Sans", sans-serif;
+    --base-size: 1rem;
+    --scale: 1.2;
+    --h1: calc(var(--h2) * var(--scale));
+    --h2: calc(var(--h3) * var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h4: calc(var(--h5) * var(--scale));
+    --h5: calc(var(--h6) * var(--scale));
+    --h6: var(--base-size);
+}
+/* Fuentes a utilizar
+    font-family: "Merriweather", serif;
+    font-family: "Work Sans", sans-serif;
+    font-family: "Albert Sans", sans-serif; 
+*/
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--mainfont);
+    padding: 0;
+    margin: 0;
+    font-size: var(--base-size);
+    /* interlineado */
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--headingfont);
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+h4 {
+    font-size: var(--h4);
+}
+
+h5 {
+    font-size: var(--h5);
+}
+
+h6 {
+    font-size: var(--h6);
+}
+
+a {
+    color: var(--ligthblue);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.albert {
+    font-family: var(--albert);
+}
