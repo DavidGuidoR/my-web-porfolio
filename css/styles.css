@@ -1,116 +1,279 @@
 @layer base {
-:root{
-    --white: #F9F6EE;
-    --black: #0D0D0D;
-    --lightgray: #BFBFBF;
-    --ligthblue: #b4b8fa;
-    --blue: #6368BF;
-    --darkblue: #4E4AD9;
-    --mainfont: "Merriweather", serif;
-    --headingfont: "Work Sans", sans-serif;
-    --albert: "Albert Sans", sans-serif;
-    --base-size: 1rem;
-    --scale: 1.2;
-    --h1: calc(var(--h2) * var(--scale));
-    --h2: calc(var(--h3) * var(--scale));
-    --h3: calc(var(--h4) * var(--scale));
-    --h4: calc(var(--h5) * var(--scale));
-    --h5: calc(var(--h6) * var(--scale));
-    --h6: var(--base-size);
-}
-/* Fuentes a utilizar
-    font-family: "Merriweather", serif;
-    font-family: "Work Sans", sans-serif;
-    font-family: "Albert Sans", sans-serif; 
-*/
-html {
-    box-sizing: border-box;
+    :root{
+        --white: #F9F6EE;
+        --black: #0D0D0D;
+        --lightgray: #BFBFBF;
+        --ligthblue: #b4b8fa;
+        --blue: #6368BF;
+        --darkblue: #4E4AD9;
+        --mainfont: "Merriweather", serif;
+        --headingfont: "Work Sans", sans-serif;
+        --albert: "Albert Sans", sans-serif;
+        --base-size: 1rem;
+        --scale: 1.2;
+        --h1: calc(var(--h2) * var(--scale));
+        --h2: calc(var(--h3) * var(--scale));
+        --h3: calc(var(--h4) * var(--scale));
+        --h4: calc(var(--h5) * var(--scale));
+        --h5: calc(var(--h6) * var(--scale));
+        --h6: var(--base-size);
+    }
+    /* Fuentes a utilizar
+        font-family: "Merriweather", serif;
+        font-family: "Work Sans", sans-serif;
+        font-family: "Albert Sans", sans-serif; 
+    */
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
+    body {
+        font-family: var(--mainfont);
+        padding: 0;
+        margin: 0;
+        font-size: var(--base-size);
+        /* interlineado */
+        line-height: 1.5;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--headingfont);
+        text-transform: uppercase;
+    }
+
+    h1 {
+        font-size: var(--h1);
+    }
+
+    h2 {
+        font-size: var(--h2);
+    }
+
+    h3 {
+        font-size: var(--h3);
+    }
+
+    h4 {
+        font-size: var(--h4);
+    }
+
+    h5 {
+        font-size: var(--h5);
+    }
+
+    h6 {
+        font-size: var(--h6);
+    }
+
+    a {
+        color: var(--ligthblue);
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    .button {
+        display: inline-block;
+        background-color: var(--ligthblue);
+        color: var(--white);
+        font-weight: 600;
+        padding: 0.8rem ;
+        margin:0 ;
+        border-radius: 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    .button:hover {
+        background-color: var(--blue);
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .albert {
+        font-family: var(--albert);
+    }
+
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+
+    }
+
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
+@layer nav {
+    header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: baseline;
+    }
 
-body {
-    font-family: var(--mainfont);
-    padding: 0;
-    margin: 0;
-    font-size: var(--base-size);
-    /* interlineado */
-    line-height: 1.5;
-}
+    header h1 {
+        font-size: var(--h3);
+        font-weight: 300;
+        margin: 0;
+    }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--headingfont);
-    text-transform: uppercase;
-}
+    header svg {
+        width: 30px;
+        fill: var(--white);
+        margin-top: -0.1rem;
+    }
 
-h1 {
-    font-size: var(--h1);
-}
+    header a {
+        color: var(--white);
+        text-decoration: none;
+    }
 
-h2 {
-    font-size: var(--h2);
-}
+    header a:hover:not(.button) {
+        color: var(--blue);
+      }
 
-h3 {
-    font-size: var(--h3);
-}
+    header a:hover svg {
+        fill: var(--blue);
+    }
 
-h4 {
-    font-size: var(--h4);
-}
+    nav {
+        font-family: var(--albert);
+        font-weight: 600;
+    }
 
-h5 {
-    font-size: var(--h5);
-}
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+    }
 
-h6 {
-    font-size: var(--h6);
-}
+    nav .button {
+        padding: 0.6rem 0.4rem 0.4rem 0.4rem;
+    }
 
-a {
-    color: var(--ligthblue);
-}
 
-a:hover {
-    text-decoration: none;
-}
+    body {
+        background-color: var(--black);
+    }
 
-.button {
-    display: inline-block;
-    background-color: var(--ligthblue);
-    color: var(--black);
-    font-weight: 600;
-    padding: 0.8rem ;
-    margin: 1.5rem 0 ;
-    border-radius: 4px;
-    text-decoration: none;
-    text-transform: uppercase;
-    line-height: 1;
-}
+    @media (max-width: 830px){
+        header{
+            justify-content: center;
+        }
 
-.button:hover {
-    background-color: var(--blue);
-}
+        header h1 {
+            flex-basis: 100%;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
 
-img {
-    max-width: 100%;
-}
+    @media (max-width: 640px){
+        header{
+            justify-content: space-between;
+        }
 
-.albert {
-    font-family: var(--albert);
-}
+        header h1 {
+            flex-basis: auto;
+        }
 
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+        header button{
+            display: block;
+            font-size: 3rem;
+            line-height: 1;
+            border: 0;
+            background: transparent;
+            color: var(--white);
+        }
 
-}
+        header button:hover{
+            color: var(--blue);
+        }
 
+        header button::after {
+            content: "\2630";
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: 200%;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+            background-color: #fff;
+            padding-top: 20%;
+            transition: right 0s 0.5s opacity 0.5s;
+        }
+
+        button:focus + nav,
+        button:focus-within + nav {
+            right: 0;
+            opacity: 1;
+            transition: right 0s, opacity 0.5s;
+        }
+
+        nav ul {
+            display: block;
+            text-align: center;
+            position: relative;
+            top: -50vh;
+            transition: top 0.5s;
+        }
+
+        button:focus + nav ul,
+        button:focus-within + nav ul {
+            top: 0;
+        }
+
+        nav a:any-link:not(.button) {
+            display: block;
+            padding: 1.5rem;
+            color: var(--ligthblue);
+        }
+
+        nav a:any-link:not(.button):hover {
+            color: var(--blue);
+            }
+
+        nav a svg {
+            fill: var(--ligthblue);
+          }
+
+        
+        nav a svg:hover {
+        fill: var(--blue);
+        }
+
+        nav .button {
+            margin-top: 1.5rem;
+            color: var(--white);
+        }
+
+        nav ul::after{
+            content: "\2716";
+            color: var(--ligthblue);
+            display: block;
+            position: absolute;
+            top: 0.125rem;
+            right: 0.5rem;
+            font-size: 3rem;
+            line-height: 1;
+        }
+    }
 }
 
 @layer intro{
@@ -142,6 +305,10 @@ img {
         background-image: url("https://assets.codepen.io/296057/fem-aurora.jpg");
         background-repeat: no-repeat;
         background-position: 50% 56%;
+    }
+
+    .contact-me p:last-child{
+        margin: 2rem 0;
     }
 
 }
