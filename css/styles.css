@@ -130,7 +130,7 @@
     header svg {
         width: 30px;
         fill: var(--white);
-        margin-top: -0.1rem;
+        margin-top: 0.5rem;
     }
 
     header a {
@@ -216,11 +216,14 @@
             opacity: 0;
             background-color: #fff;
             padding-top: 20%;
-            transition: right 0s 0.5s opacity 0.5s;
+            transition: right 0s 0.5s, opacity 0.5s;
+            z-index: 100;
         }
 
         button:focus + nav,
-        button:focus-within + nav {
+        button:focus-within + nav,
+        nav:focus ul,
+        nav:focus-within ul {
             right: 0;
             opacity: 1;
             transition: right 0s, opacity 0.5s;
@@ -235,7 +238,9 @@
         }
 
         button:focus + nav ul,
-        button:focus-within + nav ul {
+        button:focus-within + nav ul,
+        nav:focus ul,
+        nav:focus-within ul {
             top: 0;
         }
 
@@ -272,7 +277,13 @@
             right: 0.5rem;
             font-size: 3rem;
             line-height: 1;
+            cursor: pointer;
         }
+
+        nav ul:hover::after {
+            color: var(--blue);
+        }
+
     }
 }
 
@@ -297,18 +308,50 @@
 
 @layer contact{
     .contact-me{
-        background-image: url("https://assets.codepen.io/296057/fem-comet.jpg");
-        background-repeat: no-repeat;
-        padding: 4rem 0;
-        color: var(--white);
-        text-align: center;
         background-image: url("https://assets.codepen.io/296057/fem-aurora.jpg");
         background-repeat: no-repeat;
         background-position: 50% 56%;
+        padding: 4rem 0;
+        color: var(--white);
+        text-align: center;
+        
     }
 
     .contact-me p:last-child{
         margin: 2rem 0;
     }
 
+}
+
+@layer footer{
+    .footer{
+        display: block;
+        padding: 2rem;
+        background-image: url("https://assets.codepen.io/296057/fem-stars.jpg");
+        background-repeat: no-repeat;
+        background-position: 40% 5%;
+        padding: 4rem 0;
+        color: var(--white);
+        text-align: center;
+
+    }
+
+    .footer ul{
+        display: flex;
+        justify-content: center;
+        margin: 3rem;
+        gap: 2rem;
+        list-style-type: none;
+        
+        
+    }
+    .footer svg{
+        width: 30px;
+        fill: var(--white);
+        margin-top: 0.5rem;
+    }
+
+    .footer p{
+        font-size: var(--base-size);
+    }
 }
