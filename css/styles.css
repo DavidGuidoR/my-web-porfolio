@@ -9,6 +9,8 @@
         --mainfont: "Merriweather", serif;
         --headingfont: "Work Sans", sans-serif;
         --albert: "Albert Sans", sans-serif;
+        --galaxyblue: #22283B;
+        --galaxygradient: linear-gradient(0deg, rgba(32,37,56,1) 52%, rgba(104,94,58,1) 100%);
         --base-size: 1rem;
         --scale: 1.2;
         --h1: calc(var(--h2) * var(--scale));
@@ -25,6 +27,8 @@
     */
     html {
         box-sizing: border-box;
+        min-height: 100%;
+        height: 100%;
     }
 
     *,
@@ -40,6 +44,9 @@
         font-size: var(--base-size);
         /* interlineado */
         line-height: 1.5;
+        min-height: 100%;
+        height: 100%;
+        overflow-x: hidden;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -81,7 +88,7 @@
 
     .button {
         display: inline-block;
-        background-color: var(--ligthblue);
+        background-color: var(--galaxyblue);
         color: var(--white);
         font-weight: 600;
         padding: 0.8rem ;
@@ -105,12 +112,39 @@
     }
 
     .container{
-        max-width: 1200px;
+        max-width: 1600px;
+        max-height: none;
         margin: 0 auto;
         padding: 0 1rem;
 
     }
 
+}
+
+@layer intro{
+    .intro{
+        background-image: url("https://assets.codepen.io/296057/fem-comet.jpg");
+        background-repeat: no-repeat;
+        background-position: 86% 10%;
+        background-size: cover;
+        color: var(--white);
+        padding: 4rem 0;
+    }
+
+    @media (min-height: 1600px) {
+        .intro{
+            min-height: 1/3vh; 
+        }
+    }
+
+    .intro a {
+        color: var(--white)
+    }
+
+    .name{
+        font-weight: 700;
+        font-size: var(--h5);
+    }
 }
 
 @layer nav {
@@ -119,7 +153,7 @@
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: baseline;
-        background-color: var(--black);
+        margin-bottom: 6rem;
     }
 
     header h1 {
@@ -159,6 +193,7 @@
         display: flex;
         flex-flow: row wrap;
         gap: 2rem;
+        align-items: center;
     }
 
     nav .button {
@@ -285,86 +320,9 @@
     }
 }
 
-@layer intro{
-    .intro{
-        background-image: url("https://assets.codepen.io/296057/fem-comet.jpg");
-        background-repeat: no-repeat;
-        background-position: 86% 20%;
-        background-size: cover;
-        color: var(--white);
-        padding: 4rem 0;
-    }
-
-    .intro a {
-        color: var(--white)
-    }
-
-    .name{
-        font-weight: 700;
-        font-size: var(--h5);
-    }
-}
-
-@layer contact{
-    .contact-me{
-        background-image: url("https://assets.codepen.io/296057/fem-aurora.jpg");
-        background-repeat: no-repeat;
-        background-position: 50% 56%;
-        background-size: cover;
-        padding: 4rem 0;
-        color: var(--white);
-        text-align: center;
-        
-    }
-
-    .contact-me p:last-child{
-        margin: 2rem 0;
-    }
-
-}
-
-@layer footer{
-    .footer{
-        display: block;
-        padding: 2rem;
-        background-image: url("https://assets.codepen.io/296057/fem-stars.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 4rem 0;
-        color: var(--white);
-        text-align: center;
-
-    }
-
-    .footer ul{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 3rem;
-        gap: 2rem;
-        padding: 0;
-        list-style-type: none;
-        
-        
-    }
-    .footer svg{
-        width: 30px;
-        fill: var(--white);
-        margin-top: 0.5rem;
-    }
-
-    .footer svg:hover{
-        fill: var(--blue);
-    }
-
-    .footer p{
-        font-size: var(--base-size);
-    }
-}
-
 @layer projects {
     .projects{
-        background-color: var(--black);
+        background: var(--galaxygradient);
         padding: 6rem 0 4rem 0;
         color: var(--white);
     }
@@ -432,7 +390,7 @@
         grid-row: span 2;
     }
 
-    .midgrid{
+    .middlegrid{
         margin: 2rem 0 0 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -441,23 +399,23 @@
         font-size: var(--h5);
     }
 
-    .midgrid figure{
+    .middlegrid figure{
     }
 
-    .midgrid figcaption{
+    .middlegrid figcaption{
         display: flex;
         flex-direction: column;
         padding: 0 0 0 1rem;
         align-content: center;
     }
 
-    .midgrid figure a{
+    .middlegrid figure a{
         
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .midgrid figure img {
+    .middlegrid figure img {
         max-width: 200px;
         height: auto;
         object-fit: cover; 
@@ -465,4 +423,68 @@
         
     }
 
+    @media (max-width: 992px) {
+        .topgrid {
+            display: block;
+        }
+
+        .topgrid figure{
+            margin-bottom: 4rem;
+        }
+
+        .middlegrid {
+            display: block;
+        }
+
+        .middlegrid figure {
+            margin-bottom: 4rem;
+        }
+    }
+
+}
+
+@layer footer{
+    .footer{
+        display: block;
+        padding: 2rem;
+        background-image: url("https://assets.codepen.io/296057/fem-stars.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 4rem 0;
+        color: var(--white);
+        text-align: center;
+        
+
+    }
+
+    @media (min-height: 1200px) {
+        .footer{
+            min-height: 50vh; 
+        }
+    }
+
+    .footer ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem;
+        gap: 2rem;
+        padding: 0;
+        list-style-type: none;
+        
+        
+    }
+    .footer svg{
+        width: 30px;
+        fill: var(--white);
+        margin-top: 0.5rem;
+    }
+
+    .footer svg:hover{
+        fill: var(--blue);
+    }
+
+    .footer p{
+        font-size: var(--base-size);
+    }
 }
