@@ -1,6 +1,24 @@
 @import "tailwindcss";
 
+@theme inline {
+  /* Custom portfolio colors */
+  --color-primary: var(--custom-cyan);
+  --color-secondary: var(--custom-aqua);
+  --color-tertiary: var(--custom-light-blue);
+  --color-background: var(--custom-brand);
+  --color-custom-black: var(--custom-black)
+}
+
 :root {
+
+  /* Custom Color palette */
+  --custom-cyan: #19F5CF;
+  --custom-aqua: #98FAEB;
+  --custom-light-blue: #A3FAFA;
+  --custom-brand: #282F37;
+  --custom-black: #1A1D22;
+  /* //// */
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
