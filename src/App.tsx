@@ -10,9 +10,10 @@ class App extends React.Component {
     return (
         <Routes>
           <Route path="/" element={<AppLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route index element={<Home />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<div>404</div>} />
           </Route>
         </Routes>
     );

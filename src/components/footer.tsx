@@ -23,6 +23,9 @@ function Footer () {
                 <div>
                   © {new Date().getFullYear()} Mi Portafolio
                 </div>
+                <div>
+                  <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
+                </div>
             </div>
         </div>
     )

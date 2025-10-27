@@ -13,15 +13,20 @@ function NavBar () {
 
     return(
         <nav className="flex items-center justify-between gap-4">
-            <div className='flex gap-4'>
-            <NavLink to="/" className={({isActive}) => isActive ? 'font-semibold underline' : 'hover:underline'}>
-                <div className='flex gap-1'>
-                <span className='text-primary text-3xl'>{'<C/>'}</span>
-                <p className='text-white hover:text-primary text-3xl'>
+            <div className="flex gap-4">
+                <NavLink to="/" end
+                className={({ isActive }) =>
+                    [
+                    "flex items-center gap-1 hover:underline",
+                    isActive ? "font-semibold underline" : ""
+                    ].join(" ")
+                }
+                >
+                <span className="text-primary text-3xl">{'<C/>'}</span>
+                <span className="text-white hover:text-primary text-2xl md:text-3xl">
                     DAVID GUIDO
-                </p>
-                </div>
-            </NavLink>
+                </span>
+                </NavLink>
             </div>
             <div className='hidden md:flex items-center gap-8'>
             <NavLink to="/" className={({ isActive }) => isActive ? 'font-semibold underline' : 'hover:underline'}>
@@ -53,12 +58,12 @@ function NavBar () {
                         <FontAwesomeIcon icon={faX} className="text-5xl" onClick={handleClick}/>
                     </button>
                     <div className="flex flex-col items-center justify-center gap-24 h-full">
-                        <NavLink to="/" className={({ isActive }) => isActive ? 'font-semibold underline' : 'hover:underline'}>
+                        <NavLink to="/" className={({ isActive }) => isActive ? 'font-semibold underline' : 'hover:underline'} onClick={handleClick}>
                             <p className='text-white hover:text-primary text-3xl'>
                             Inicio
                             </p>
                         </NavLink>
-                        <NavLink to="/projects" className={({ isActive }) => isActive ? 'font-semibold underline' : 'hover:underline'}>
+                        <NavLink to="/projects" className={({ isActive }) => isActive ? 'font-semibold underline' : 'hover:underline'} onClick={handleClick}>
                             <p className='text-white hover:text-primary text-3xl'>
                             Proyectos
                             </p>
