@@ -1,9 +1,10 @@
 import { faEnvelope} from "@fortawesome/free-regular-svg-icons";
-import { faBriefcase, faCode, faCubes, faDatabase, faDisplay, faDownload, faLocationDot, faServer } from "@fortawesome/free-solid-svg-icons";
+import { faBolt, faBriefcase, faCode, faCubes, faDatabase, faDisplay, faDownload, faLocationDot, faServer } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextPill from "../components/text-pill";
 import Button from "../components/button";
 import AboutBackground from '@/assets/about-background.png'
+import ProjectBackground from '@/assets/about-background-2.png'
 import type React from "react";
 import { faCss3Alt, faGitAlt, faHtml5, faNode, faReact } from "@fortawesome/free-brands-svg-icons";
 import Circle from "../components/circle-skill";
@@ -16,6 +17,7 @@ const Home = () => {
         </Home.Container>
             <Home.About/>
             <Home.Skills/>
+            <Home.Projects/>
         </>
     )
 }
@@ -235,9 +237,59 @@ const SkillsSection = () => {
     );
 }
 
+const ProjectsSection = () => {
+    return(
+        <section
+  className="relative w-full max-w-6xl flex items-center justify-center min-w-screen bg-no-repeat bg-cover bg-center py-20"
+  style={{ backgroundImage: `url(${ProjectBackground})` }}
+>
+  <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+
+  <div className="w-full relative z-10 flex flex-col items-center gap-3">
+    <div className="text-primary text-4xl">◆</div>
+    <div className="text-white/70">|</div>
+    <div className="text-white/70">|</div>
+    <div className="text-white/70">|</div>
+    <div className="text-primary">🔺</div>
+
+    <div className="flex flex-col items-center max-w-6xl gap-8 px-4 sm:px-8 md:px-10 w-full">
+      <div className="ml-auto w-fit text-3xl md:text-5xl text-secondary border-4 border-secondary rounded-br-[2rem] rounded-tl-[2rem] py-4 px-12 bg-background">
+        Proyectos
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full">
+        <img
+          src="/static/butzu-mobile.png"
+          alt="Butzu mobile"
+          className="w-full h-full max-w-xs object-fill mx-auto"
+        />
+        <img
+          src="/static/vialidolid-movil.png"
+          alt="SIM"
+          className="w-full h-full rounded-4xl max-w-xs object-fill mx-auto"
+        />
+      </div>
+
+      <div className="w-full flex items-center justify-center">
+        <a href="#/projects" className="w-full  flex items-center justify-center">
+        <Button className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2 py-6 text-center bg-white flex items-center justify-center gap-2">
+            <p className="text-2xl font-bold text-custom-black">Consultar Proyectos</p>
+            <FontAwesomeIcon icon={faBolt} className=" text-custom-black text-2xl" />
+        </Button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    );
+}
+
 Home.Container = Container;
 Home.Hero = HeroSection;
 Home.About = AboutSection;
 Home.Skills = SkillsSection;
+Home.Projects = ProjectsSection;
 
 export default Home;
